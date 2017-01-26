@@ -1,0 +1,5 @@
+womanhat.bmp	img1.bmp	40	22	52	60	48	41	33	50	25	38	57	47	44	47	46	40	46	40	44
+churchandcapitol.bmp	img2.bmp	64	39	59	73	54	65	56	81	35	36	56	73	67	61	70	46	59	60	61
+lighthouse.bmp	img3.bmp	79	60	76	85	79	81	74	79	92	69	70	71	89	71	69	63	73	72	90
+churchandcapitol.bmp	img4.bmp	16	5	29	9	14	23	18	35	13	15	11	27	17	32	9	21	23	19	1
+carnivaldolls.bmp	img5.bmp	89	70	78	89	85	70	94	79	75	74	72	77	75	79	84	61	88	84	88

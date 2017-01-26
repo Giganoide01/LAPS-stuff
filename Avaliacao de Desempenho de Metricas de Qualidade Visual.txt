@@ -1,0 +1,18 @@
+PSNR
+Razao de outliers: 0.000858369098712
+Coeficiente de Spearman: 0.906148678907
+Coeficiente de Pearson: 0.837630870106
+Funcao Losgistica:(34201.1681746) * (0.5-(43.4782608696)/(exp(43.4782608696*(x-(1.0471975512))))) + (6.10071145192) * x+(-17220.7781093)
+Regressao Linear:(6.10071146644)*x + (-120.194022413)
+MSE
+Razao de outliers: 0.000858369098712
+Coeficiente de Spearman: 0.94875589607
+Coeficiente de Pearson: 0.960478368511
+Funcao Losgistica:(65.5974253332) * (0.5-(-11.5287548828)/(exp(-11.5287548828*(x-(0.528548342713))))) + (212.110618289) * x+(-99.370841093)
+Regressao Linear:(152.221527085)*x + (-75.5316912022)
+MSIM
+Razao de outliers: 0.000858369098712
+Coeficiente de Spearman: -0.869004792751
+Coeficiente de Pearson: -0.695502741883
+Funcao Losgistica:(124.495770276) * (0.5-(43.4782608696)/(exp(43.4782608696*(x-(1.0471975512))))) + (-0.447110456645) * x+(141.580776389)
+Regressao Linear:(-0.11263238151)*x + (82.5228309882)

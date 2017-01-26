@@ -1,0 +1,62 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import misc
+import funcaoPM
+import metrica
+
+#import ssim
+
+
+def metricas (orig, test, arquivo):
+
+    arquiv = arquivo
+    subjectscores = open(arquiv, 'r')  #ler arquivo
+    conteudo_texto1 = subjectscores.read()
+    aa = conteudo_texto1.split('\n')                #separar por espaco
+    cc = aa[:-1]                                    
+    print cc                                        #fechar arquivo
+    subjectscores.close()
+
+
+    for i in xrange(0, len(cc)):
+        a = aa[i].split('\t')
+        print a
+        dirOrig = orig
+        imag = a[0]
+        print dirOrig+'/'+imag
+        ref = plt.imread(dirOrig + imag)
+        dirTest = test
+        imag = a[1]
+        teste = plt.imread(dirTest + imag)
+        
+        psrn = metrica.psnr(ref, teste)
+        
+        mse  = metrica.mse(ref, teste)
+        
+        j = 0
+        a = ref[:,:,j]
+        b = teste[:,:,j]
+        ssim0 = psnr.msim(a, b)
+
+        j = j+1
+        a = ref[:,:,j]
+        b = teste[:,:,j]
+        ssim1 = psnr.msim(a, b)
+
+        j = j+1
+        a = ref[:,:,j]
+        b = teste[:,:,j]
+        ssim2 = metrica.msim(a, b)
+        ssim = (ssim0 + ssim1 + ssim2)/3
+        
+        psrn2 = str(psrn)
+        ssim2 = str(ssim)
+        mse2 = str(mse)
+        f = open('arquivo.txt','a')
+        f.write('img' + str(i) + ';' + psrn2 + ';' + ssim2 + ';' + mse2 + '\n' )
+        f.close()
+        i  = i + 1
+    arquivo = open('arquivo.txt', 'r')
+    print(arquivo.readlines())
+    arquivo.close()
+

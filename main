@@ -1,0 +1,70 @@
+import numpy as np
+import PsnrMsim as p
+import avaliacao
+
+
+def aqv(orig, teste, arquivo, psnr, msim, mse, out, spearman, pearson, log, linear):
+    f = open('Avaliacao de Desempenho de Metricas de Qualidade Visual.txt','a')    
+    #a = p.metricas(orig, teste, arquivo)
+    if psnr:
+        razao_outliers, coeficiente_spearman, coeficiente_pearson, logistica, linear = avaliacao.avaliacao(1, arquivo)
+        f.write('PSNR' + '\n')
+        if out:
+            f.write('Razao de outliers: ' + str(razao_outliers)+ '\n')
+    '''
+        if spearman:
+            f.write('Coeficiente de Spearman: ' + str(coeficiente_spearman) + '\n')
+        if pearson:
+            f.write('Coeficiente de Pearson: ' + str(coeficiente_pearson) + '\n')
+        if log:
+            f.write('Funcao Losgistica:' + logistica + '\n')
+        if linear:
+            f.write('Regressao Linear:' + linear + '\n')
+    
+    if msim == True:
+        razao_outliers, coeficiente_spearman, coeficiente_pearson, logistica, linear = avaliacao.avaliacao(2, arquivo)
+        f.write('MSIM' + '\n')
+        
+        if out == True:
+            f.write('Razao de outliers: ' + str(razao_outliers)+ '\n')
+        if spearman == True:
+            f.write('Coeficiente de Spearman: ' + str(coeficiente_spearman) + '\n')
+        if pearson == True:
+            f.write('Coeficiente de Pearson: ' + str(coeficiente_pearson) + '\n')
+        if log == True:
+            f.write('Funcao Losgistica:' + logistica + '\n')
+        if linear == True:
+            f.write('Regressao Linear:' + linear + '\n')
+    if mse == True:
+        razao_outliers, coeficiente_spearman, coeficiente_pearson, logistica, linear = avaliacao.avaliacao(3, arquivo)
+        f.write('MSE' + '\n')
+        
+        if out == True:
+            f.write('Razao de outliers: ' + str(razao_outliers)+ '\n')
+        if spearman == True:
+            f.write('Coeficiente de Spearman: ' + str(coeficiente_spearman) + '\n')
+        if pearson == True:
+            f.write('Coeficiente de Pearson: ' + str(coeficiente_pearson) + '\n')
+        if log == True:
+            f.write('Funcao Losgistica:' + logistica + '\n')
+        if linear == True:
+            f.write('Regressao Linear:' + linear + '\n')
+    '''
+    f.close()
+orig = 'C:\Users\Luana\Documents\Luana\live\live1\jpeg database release\database release/'
+teste = 'C:\Users\Luana\Documents\Luana\live\live1\jpeg database release\database release/'
+arquivo = 'C:\Users\Public\Documents\orig\subjectscores.txt'
+psnr = True
+msim = True
+mse = True
+out = True
+spearman = True
+pearson = True
+log = True
+linear = True
+razao_outliers, coeficiente_spearman, coeficiente_pearson, logistica, linear = aqv(orig, teste, arquivo, psnr, msim, mse, out, spearman, pearson, log, linear)
+print 'Razao de outliers: ' + str(razao_outliers)
+print 'Coeficiente de Spearman: ' + str(coeficiente_spearman)
+print 'Coeficiente de Pearson: ' + str(coeficiente_pearson)
+print 'Funcao Losgistica:' + logistica
+print 'Regressao Linear:' + linear
